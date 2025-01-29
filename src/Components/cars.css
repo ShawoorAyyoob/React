@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .car-table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+  
+  .car-table th, .car-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .car-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .car-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .car-table tr:hover {
+    background-color: #ddd;
+  }
+  
