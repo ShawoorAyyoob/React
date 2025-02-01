@@ -262,7 +262,7 @@ function Products() {
   ];
   return (
     <div>
-      <h1 className="text-primary">Shawoor Catalogue</h1>
+      <h1 className="text-danger">Shawoor Catalogue</h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {products.map((product) => (
           <div className="col">
