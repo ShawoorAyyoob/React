@@ -1,8 +1,4 @@
-interface Course{
-   id: number;
-   Name: string;
-   Instructor: string;
-}
+import Course from "../Models/Courses";
 interface Props{
     list : Course[];
     title : string;

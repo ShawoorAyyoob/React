@@ -1,4 +1,5 @@
 import './Products.css';
+import Product from '../Models/Product';
 function Products() {
   const products = [
     {
