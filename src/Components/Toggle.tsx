@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 const Toggle = () => {
-  const [isOn, setIsOn] = useState(false);
-
+  const [isOn, setON] = useState(true);
   return (
     <div>
-      <h2>Status: {isOn ? "ON" : "OFF"}</h2>
-      <button onClick={() => setIsOn(!isOn)}>Toggle</button>
+      <h1>Toggle Demo</h1>
+      <img src="" alt="" />
+      <h2>{isOn ? "On" : "Off"}</h2>
+      <button onClick={() => setON(!isOn)}> Click</button>
     </div>
   );
 };
-
 export default Toggle;

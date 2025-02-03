@@ -10,11 +10,14 @@ import Courses from "./Components/NewCourses";
 import Cars from "./Components/Cars3";
 import getCars from "./Services/CarsService";
 import getProduct from "./Services/ProductService";
+import Counter from "./Components/Counter";
+import Toggle from "./Components/Toggle";
+import NameInput from "./Components/NameInput";
 
 function App() {
   return (
     <div>
-      <Products list={getProduct()} />
+      <NameInput />
     </div>
   );
 }
