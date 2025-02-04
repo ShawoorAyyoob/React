@@ -13,11 +13,12 @@ import getProduct from "./Services/ProductService";
 import Counter from "./Components/Counter";
 import Toggle from "./Components/Toggle";
 import NameInput from "./Components/NameInput";
+import ToggleButton from "./Components/ToggleSwitch";
 
 function App() {
   return (
     <div>
-      <NameInput />
+      <ToggleButton />
     </div>
   );
 }
