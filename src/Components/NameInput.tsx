@@ -1,9 +1,9 @@
 import { useState } from "react";
 const NameInput = () => {
   const [user, setUser] = useState({
-    name: "Name",
-    age: "Age",
-    course: "Course",
+    name: "",
+    age: "",
+    course: "",
   });
 
   return (
@@ -12,7 +12,10 @@ const NameInput = () => {
         type="name"
         value={user.name}
         onChange={(e) =>
-          setUser({ name: e.target.value, age: user.age, course: user.course })
+          setUser({
+            ...user,
+            name: e.target.value,
+          })
         }
       />
       <br />
@@ -20,7 +23,10 @@ const NameInput = () => {
         type="age"
         value={user.age}
         onChange={(e) =>
-          setUser({ name: user.name, age: e.target.value, course: user.course })
+          setUser({
+            ...user,
+            age: e.target.value,
+          })
         }
       />
       <br />
@@ -28,11 +34,14 @@ const NameInput = () => {
         type="course"
         value={user.course}
         onChange={(e) =>
-          setUser({ name: user.name, age: user.age, course: e.target.value })
+          setUser({
+            ...user,
+            course: e.target.value,
+          })
         }
       />
       <p>
-    Name: {user.name} , Age: {user.age}, Course: {user.course}
+        Name: {user.name} , Age: {user.age}, Course: {user.course}
       </p>
     </div>
   );

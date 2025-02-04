@@ -14,13 +14,18 @@ import Counter from "./Components/Counter";
 import Toggle from "./Components/Toggle";
 import NameInput from "./Components/NameInput";
 import ToggleButton from "./Components/ToggleSwitch";
+import Greeting from "./Components/Greetings";
 
 function App() {
-  return (
-    <div>
-      <ToggleButton />
-    </div>
-  );
+//   return (
+//     <div>
+//       <h1>La Vendar</h1>
+//       <Greeting>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt optio molestias tempora? Pariatur non dignissimos recusandae, quibusdam, qui.</Greeting> 
+//     </div>
+//   );
+return(
+  <Toggle/>
+)
 }
 
 export default App;
