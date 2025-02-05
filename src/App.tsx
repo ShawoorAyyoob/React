@@ -17,17 +17,14 @@ import ToggleButton from "./Components/ToggleSwitch";
 import Greeting from "./Components/Greetings";
 import ArticleList from "./Components/ArticleList";
 import UserList from "./Components/UserList";
+import ProductList from "./Components/ProductList";
+import RecipeList from "./Components/RecipeList";
 
 function App() {
-//   return (
-//     <div>
-//       <h1>La Vendar</h1>
-//       <Greeting>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt optio molestias tempora? Pariatur non dignissimos recusandae, quibusdam, qui.</Greeting> 
-//     </div>
-//   );
+//   
 return(
   <div>
-          <UserList/>
+          <RecipeList/>
   </div>
 )
 }
