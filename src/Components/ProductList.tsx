@@ -24,7 +24,8 @@ function ProductList() {
           <div className="card-body">
             <h5 className="card-title">{product.title}</h5>
             <p className="card-text">
-              {product.image} <br /> {product.price} <br /> {product.category}
+              <img src={product.image} className="card-img-top" alt="..." />
+              <br /> {product.price} <br /> {product.category}
             </p>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 // import message from "./Components/message";
@@ -19,14 +20,21 @@ import ArticleList from "./Components/ArticleList";
 import UserList from "./Components/UserList";
 import ProductList from "./Components/ProductList";
 import RecipeList from "./Components/RecipeList";
+import Home from "./Components/Home";
+import AboutUs from "./Components/AboutUs";
 
 function App() {
-//   
-return(
-  <div>
-          <RecipeList/>
-  </div>
-)
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About Us</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<AboutUs />}></Route>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
