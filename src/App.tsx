@@ -22,16 +22,18 @@ import ProductList from "./Components/ProductList";
 import RecipeList from "./Components/RecipeList";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
+import PostList from "./Components/PostList";
+import PostDetails from "./Components/PostDetails";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About Us</Link>
-      </nav>
+      <div className="container mt-4">
+        <h1>Posts 2025</h1>
+      </div>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<AboutUs />}></Route>
+        <Route path="/" element={<PostList />}></Route>
+        <Route path="/posts/:id" element={<PostDetails />}></Route>
       </Routes>
     </Router>
   );
