@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 interface Product {
-    // id: number;
+    id: number;
     title: string;
     description: string;
     price: number;
@@ -39,14 +39,12 @@ function ProductDetails() {
     return (
         <div>
             <h2>{product.title}</h2>
-            <p>{product.description}</p>
+            {/* <p>{product.description}</p>
             <p>{product.category}</p>
             <p>{product.brand}</p>
             <p>{product.rating}</p>
             <img src={product.image} alt="" />
-            <p>
-                <strong> 💰 Price:</strong> {product.price}
-            </p>
+            <p> Price:{product.price}</p> */}
             <Link to="/">Back To Products</Link>
         </div>
     );

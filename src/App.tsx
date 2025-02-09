@@ -26,16 +26,22 @@ import PostList from "./Components/PostList";
 import PostDetails from "./Components/PostDetails";
 import ProductList2 from "./Components/ProductList2";
 import ProductDetails from "./Components/ProductDetails";
+import FilteredPostList from "./Components/PostSearch";
 
 function App() {
   return (
     <Router>
       <div className="container mt-4">
-        <h1>Product List</h1>
+        <h1>React</h1>
       </div>
       <Routes>
-        <Route path="/" element={<ProductList2 />}></Route>
-        <Route path="/products" element={<ProductDetails />}></Route>
+        {/* <Route path="/" element={<ProductList2 />}></Route> */}
+        {/* <Route path="/products" element={<ProductDetails />}></Route> */}
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/posts" element={<FilteredPostList />}></Route>
+        <Route path="/posts-search" element={<FilteredPostList />}></Route>
+        <Route path="/toggle" element={<Toggle />}></Route>
+        <Route path="/ToggleSwitch" element={<ToggleButton />}></Route>
       </Routes>
     </Router>
   );
