@@ -27,6 +27,7 @@ import PostDetails from "./Components/PostDetails";
 import ProductList2 from "./Components/ProductList2";
 import ProductDetails from "./Components/ProductDetails";
 import FilteredPostList from "./Components/PostSearch";
+import FilteredProductList from "./Components/Products3";
 
 function App() {
   return (
@@ -38,10 +39,7 @@ function App() {
         {/* <Route path="/" element={<ProductList2 />}></Route> */}
         {/* <Route path="/products" element={<ProductDetails />}></Route> */}
         <Route path="/" element={<Home />}></Route>
-        <Route path="/posts" element={<FilteredPostList />}></Route>
-        <Route path="/posts-search" element={<FilteredPostList />}></Route>
-        <Route path="/toggle" element={<Toggle />}></Route>
-        <Route path="/ToggleSwitch" element={<ToggleButton />}></Route>
+        <Route path="/products-search" element={<FilteredProductList />}></Route>
       </Routes>
     </Router>
   );

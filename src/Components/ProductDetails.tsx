@@ -39,12 +39,6 @@ function ProductDetails() {
     return (
         <div>
             <h2>{product.title}</h2>
-            {/* <p>{product.description}</p>
-            <p>{product.category}</p>
-            <p>{product.brand}</p>
-            <p>{product.rating}</p>
-            <img src={product.image} alt="" />
-            <p> Price:{product.price}</p> */}
             <Link to="/">Back To Products</Link>
         </div>
     );

@@ -15,6 +15,9 @@ function Home() {
       <Link className="btn btn-warning btn-lg me-2" to="/posts-search">
         Post Search
       </Link>
+      <Link className="btn btn-warning btn-lg me-2" to="/products-search">
+        Product Search
+      </Link>
     </main>
   );
 }
