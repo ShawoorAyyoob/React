@@ -18,6 +18,9 @@ function Home() {
       <Link className="btn btn-warning btn-lg me-2" to="/products-search">
         Product Search
       </Link>
+      <Link className="btn btn-warning btn-lg me-2" to="/courses">
+        Courses
+      </Link>
     </main>
   );
 }

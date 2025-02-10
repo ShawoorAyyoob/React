@@ -28,6 +28,8 @@ import ProductList2 from "./Components/ProductList2";
 import ProductDetails from "./Components/ProductDetails";
 import FilteredPostList from "./Components/PostSearch";
 import FilteredProductList from "./Components/Products3";
+import CoursesList from "./Components/CoursesList";
+import AddCourse from "./Components/AddCourse";
 
 function App() {
   return (
@@ -39,7 +41,13 @@ function App() {
         {/* <Route path="/" element={<ProductList2 />}></Route> */}
         {/* <Route path="/products" element={<ProductDetails />}></Route> */}
         <Route path="/" element={<Home />}></Route>
-        <Route path="/products-search" element={<FilteredProductList />}></Route>
+        <Route
+          path="/products-search"
+          element={<FilteredProductList />}
+        ></Route>
+        <Route path="/courses" element={<CoursesList />}></Route>
+
+        <Route path="/add-course" element={<AddCourse />}></Route>
       </Routes>
     </Router>
   );
