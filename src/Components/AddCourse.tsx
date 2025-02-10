@@ -5,6 +5,8 @@ const AddCourse = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [duration, setDuration] = useState("");
+  const [fees, setFees] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -13,7 +15,7 @@ const AddCourse = () => {
   };
 
   const addUser = async () => {
-    let requestBody = { title, description };
+    let requestBody = { title, description, duration, fees };
     let requestBodyJSON = JSON.stringify(requestBody);
     const request = {
       method: "POST",
@@ -62,6 +64,38 @@ const AddCourse = () => {
             placeholder="Course Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="durationTextBox" className="text-secondary">
+            Duration
+          </label>
+        </div>
+        <div>
+          <input
+            className="form-control mb-4"
+            type="text"
+            name="durationTextBox"
+            id="durationTextBox"
+            placeholder="Course Duration"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="feesTextBox" className="text-secondary">
+            Fees
+          </label>
+        </div>
+        <div>
+          <input
+            className="form-control mb-4"
+            type="number"
+            name="feesTextBox"
+            id="feesTextBox"
+            placeholder="Course Fees"
+            value={fees}
+            onChange={(e) => setFees(e.target.value)}
           />
         </div>
         <div>
