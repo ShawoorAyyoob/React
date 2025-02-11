@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface Course {
-  id: number;
+  id: string;
   title: string;
   description: string;
   duration: string;
   fees: string;
+  image: string;
 }
 function CoursesList() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -21,6 +22,16 @@ function CoursesList() {
       const data = await response.json();
       setCourses(data);
     }
+  };
+  const deleteCourse = async (id: string) => {
+    const request = {
+      method: "DELETE",
+    }
+    const response = await fetch(`${API_URL}/ ${id}`, request);
+    const data = response.json();
+
+    const updatedCourses = courses.filter((course) => course.id != id);
+    setCourses(updatedCourses);
   };
 
   useEffect(() => {
@@ -48,6 +59,8 @@ function CoursesList() {
               <th scope="col">Description</th>
               <th scope="col">Duration</th>
               <th scope="col">Fees</th>
+              <th scope="col">Image</th>
+              <th scope="col">More</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +71,15 @@ function CoursesList() {
                 <td>{course.description}</td>
                 <td>{course.duration}</td>
                 <td>{course.fees}</td>
+                <td>{course.image}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteCourse(course.id)}
+                  >
+                    ⚙️ Edit 🚮 Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
