@@ -5,6 +5,8 @@ interface Course {
   id: number;
   title: string;
   description: string;
+  duration: string;
+  fees: string;
 }
 function CoursesList() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -44,6 +46,8 @@ function CoursesList() {
               <th scope="col">Id</th>
               <th scope="col">Title</th>
               <th scope="col">Description</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Fees</th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +56,8 @@ function CoursesList() {
                 <th scope="row">{course.id}</th>
                 <td>{course.title}</td>
                 <td>{course.description}</td>
+                <td>{course.duration}</td>
+                <td>{course.fees}</td>
               </tr>
             ))}
           </tbody>

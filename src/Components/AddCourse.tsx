@@ -7,16 +7,42 @@ const AddCourse = () => {
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
   const [fees, setFees] = useState("");
+  const [titleError, setTitleError] = useState("");
+  const [descriptionError, setDescriptionError] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    addUser();
-  };
+  
+  if (isValidForm()) {
+    addCourse();
+    setMessage("");
+ }else  (
+    setMessage("Please fill the form")
+)
+ };
+  const isValidForm = () => {
+    let validForm: Boolean = true;
 
-  const addUser = async () => {
+  if (title.trim() == "") {
+    setTitleError("Please fill the title.");
+    validForm = false;
+  } else {
+    setTitleError("");
+  }
+      if (description.trim() == "") {
+    setDescriptionError("Please fill the Description.");
+    validForm = false;
+  } else {
+    setDescriptionError("");
+  }
+    return validForm;
+  }
+
+  const addCourse = async () => {
     let requestBody = { title, description, duration, fees };
     let requestBodyJSON = JSON.stringify(requestBody);
+
     const request = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -27,11 +53,19 @@ const AddCourse = () => {
       console.log("Course added.");
       const data = await response.json();
       console.log(data);
+       setMessage("Course Added Successfully"); 
+      setTitle(""); 
+      setDescription("");
     }
   };
 
   return (
     <div>
+      {message ? (
+        <div className="alert alert-primary alert-dismissible"> {message} </div>
+      ) : (
+        <div></div>
+      )};
       <h2>Add Course</h2>
       <form className="border p-3 shadow-lg rounded" onSubmit={handleSubmit}>
         <div className="mb-2">

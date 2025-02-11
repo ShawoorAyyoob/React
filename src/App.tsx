@@ -38,15 +38,9 @@ function App() {
         <h1>React</h1>
       </div>
       <Routes>
-        {/* <Route path="/" element={<ProductList2 />}></Route> */}
-        {/* <Route path="/products" element={<ProductDetails />}></Route> */}
         <Route path="/" element={<Home />}></Route>
-        <Route
-          path="/products-search"
-          element={<FilteredProductList />}
-        ></Route>
+        <Route path="/products-search" element={<FilteredProductList />}></Route>
         <Route path="/courses" element={<CoursesList />}></Route>
-
         <Route path="/add-course" element={<AddCourse />}></Route>
       </Routes>
     </Router>
