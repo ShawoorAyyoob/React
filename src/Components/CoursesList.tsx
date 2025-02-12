@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import EditCourse from "./EditCourse";
 
 interface Course {
   id: string;
@@ -13,7 +14,7 @@ function CoursesList() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-    const API_URL = "https://67a97dfc6e9548e44fc3c6ea.mockapi.io/courses";
+  const API_URL = "https://67a97dfc6e9548e44fc3c6ea.mockapi.io/courses";
   const fetchCourses = async () => {
     const response = await fetch(API_URL);
     if (response.ok == false) {
@@ -26,7 +27,7 @@ function CoursesList() {
   const deleteCourse = async (id: string) => {
     const request = {
       method: "DELETE",
-    }
+    };
     const response = await fetch(`${API_URL}/ ${id}`, request);
     const data = response.json();
 
@@ -46,12 +47,12 @@ function CoursesList() {
     <>
       <div>
         <Link to="/add-course" className="btn btn-outline-success mb-3">
-          Add Course
+         ➕ Add Course
         </Link>
       </div>
       <div className="container mt-4">
         <h1> Courses List</h1>
-        <table className="table table-striped table-hover">
+        <table className="table table-hover">
           <thead>
             <tr>
               <th scope="col">Id</th>
@@ -71,13 +72,16 @@ function CoursesList() {
                 <td>{course.description}</td>
                 <td>{course.duration}</td>
                 <td>{course.fees}</td>
-                <td>{course.image}</td>
                 <td>
+                  <img src={course.image} alt="..." />
+                </td>
+                <td>
+                     <Link className="btn btn-success" to={`/edit-course/${course.id}`}>⚙️ Edit </Link>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-danger" 
                     onClick={() => deleteCourse(course.id)}
                   >
-                    ⚙️ Edit 🚮 Delete
+                   ❌ Delete
                   </button>
                 </td>
               </tr>

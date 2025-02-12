@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const AddCourse = () => {
   const API_URL = "https://67a97dfc6e9548e44fc3c6ea.mockapi.io/courses";
@@ -7,37 +8,36 @@ const AddCourse = () => {
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
   const [fees, setFees] = useState("");
+  const navigate = useNavigate();
   const [titleError, setTitleError] = useState("");
   const [descriptionError, setDescriptionError] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-  
-  if (isValidForm()) {
-    addCourse();
-    setMessage("");
- }else  (
-    setMessage("Please fill the form")
-)
- };
+
+    if (isValidForm()) {
+      addCourse();
+      setMessage("");
+    } else setMessage("Please fill the form");
+  };
   const isValidForm = () => {
     let validForm: Boolean = true;
 
-  if (title.trim() == "") {
-    setTitleError("Please fill the title.");
-    validForm = false;
-  } else {
-    setTitleError("");
-  }
-      if (description.trim() == "") {
-    setDescriptionError("Please fill the Description.");
-    validForm = false;
-  } else {
-    setDescriptionError("");
-  }
+    if (title.trim() == "") {
+      setTitleError("Please fill the title.");
+      validForm = false;
+    } else {
+      setTitleError("");
+    }
+    if (description.trim() == "") {
+      setDescriptionError("Please fill the Description.");
+      validForm = false;
+    } else {
+      setDescriptionError("");
+    }
     return validForm;
-  }
+  };
 
   const addCourse = async () => {
     let requestBody = { title, description, duration, fees };
@@ -53,8 +53,8 @@ const AddCourse = () => {
       console.log("Course added.");
       const data = await response.json();
       console.log(data);
-       setMessage("Course Added Successfully"); 
-      setTitle(""); 
+      setMessage("Course Added Successfully");
+      setTitle("");
       setDescription("");
     }
   };
@@ -65,10 +65,10 @@ const AddCourse = () => {
         <div className="alert alert-primary alert-dismissible"> {message} </div>
       ) : (
         <div></div>
-      )};
-      <h2>Add Course</h2>
-      <form className="border p-3 shadow-lg rounded" onSubmit={handleSubmit}>
-        <div className="mb-2">
+      )}
+      ;<h2>Add Course</h2>
+      <form className="border p-4 shadow-lg rounded" onSubmit={handleSubmit}>
+        <div className="mb-3">
           <label htmlFor="titleTextBox" className="text-secondary">
             Title
           </label>
