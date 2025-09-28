@@ -1,6 +1,6 @@
 import { useState } from "react";
-import OnImg from "../assets/on.jpg";
-import OffImg from "../assets/off.jpg";
+import OnImg from "../assets/switch-on.jpg";
+import OffImg from "../assets/switch-off.jpg";
 
 const ToggleButton = () => {
   const [isOn, setON] = useState(true);

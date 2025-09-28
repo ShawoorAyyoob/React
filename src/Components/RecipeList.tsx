@@ -24,14 +24,14 @@ function RecipeList() {
 
   useEffect(() => {
     fetchRecipes();
-  });
+  }, []);
 
   if (error != null) {
     return <h3>Error while loading Recipes</h3>;
   }
   return (
     <div className="container">
-      <h2> Shawoor La Cusine</h2>
+      <h2> Recipe List</h2>
       <div className="row">
         {recipes.map((recipe) => (
           <div className="col-sm-6 mb-3" key={recipe.name}>

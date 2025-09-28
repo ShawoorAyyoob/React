@@ -1,0 +1,45 @@
+.car-bg {
+    background: linear-gradient(120deg, #eaf4fb 0%, #f8f9fa 100%);
+}
+
+.car-card {
+    background: linear-gradient(120deg, #ffffff 70%, #eaf4fb 100%);
+    border-radius: 0.75rem;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15);
+    transition: all 0.2s;
+    border: 1px solid #1976d2;
+}
+
+.text-carblue {
+    color: #1976d2 !important;
+}
+
+.bg-carblue {
+    background-color: #1976d2 !important;
+    color: #fff !important;
+}
+
+.btn-carblue {
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+}
+
+.btn-carblue:hover {
+    background-color: #1565c0;
+    color: #fff;
+}
+
+.btn-outline-carblue {
+    color: #1976d2;
+    border-color: #1976d2;
+}
+
+.btn-outline-carblue:hover {
+    background-color: #1976d2;
+    color: #fff;
+}
