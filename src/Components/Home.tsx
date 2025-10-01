@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './Home.css';
 
 function Home() {
   return (
@@ -39,11 +40,11 @@ function Home() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link nav-link-glow" to="/toggleSwitch">
                   ToggleSwitch
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link nav-link-glow" to="/postList">
                   Post List
@@ -61,7 +62,7 @@ function Home() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link nav-link-glow" to="/recipe-search">
-                  Recipe
+                  Recipes
                 </Link>
               </li>
               <li className="nav-item">
@@ -74,6 +75,16 @@ function Home() {
                   Cars
                 </Link>
               </li>
+               <li className="nav-item">
+                <Link className="nav-link nav-link-glow" to="/popular-movies">
+                  Movies
+                </Link>
+              </li>
+               {/* <li className="nav-item">
+                <Link className="nav-link nav-link-glow" to="/movies-search">
+                  Search Movies
+                </Link>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -170,64 +181,6 @@ function Home() {
           . All rights reserved.
         </span>
       </footer>
-      <style>
-        {`
-          .animate__animated.animate__fadeIn {
-            animation: fadeIn 1.2s;
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px);}
-            to { opacity: 1; transform: translateY(0);}
-          }
-          .nav-link-glow {
-            color: #fff !important;
-            position: relative;
-            transition: color 0.2s;
-          }
-          .nav-link-glow:hover, .nav-link-glow.active {
-            color: #ffd700 !important;
-            text-shadow: 0 0 8px #fc466b, 0 0 16px #3f5efb;
-          }
-            .animate__animated.animate__fadeIn {
-            animation: fadeIn 1.2s;
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px);}
-            to { opacity: 1; transform: translateY(0);}
-          }
-          .nav-link-glow {
-            color: #fff !important;
-            position: relative;
-            transition: color 0.2s;
-          }
-          .nav-link-glow:hover, .nav-link-glow.active {
-            color: #ffd700 !important;
-            text-shadow: 0 0 8px #fc466b, 0 0 16px #3f5efb;
-          }
-            .footer-nexa {
-            background: linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
-            color: #fff;
-            padding: 1.2rem 0 1rem 0;
-            text-align: center;
-            font-size: 1.08rem;
-            letter-spacing: 0.5px;
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-            margin-top: 48px;
-            box-shadow: 0 -2px 16px 0 rgba(63,95,251,0.08);
-          }
-          .footer-nexa a {
-            color: #ffd700;
-            text-decoration: underline;
-            margin: 0 0.25rem;
-            font-weight: 500;
-            transition: color 0.2s;
-          }
-          .footer-nexa a:hover {
-            color: #fffbe7;
-          }
-        `}
-      </style>
     </main>
   );
 }
