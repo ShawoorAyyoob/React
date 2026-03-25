@@ -1,5 +1,5 @@
-import axios from 'axios';
-import Movie from '../Models/Tmdb';
+import axios from "axios";
+import Movie from "../Models/Tmdb";
 
 const API_KEY = "b559c2662d324af3e8c98fde508d81e1";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -16,9 +16,12 @@ export const fetchMovies = async (query: string) => {
 };
 
 export const fetchPopularMovies = async () => {
-  const response = await axios.get<MoviesResponse>(`${BASE_URL}/movie/popular`, {
-    params: { api_key: API_KEY },
-  });
+  const response = await axios.get<MoviesResponse>(
+    `${BASE_URL}/movie/popular`,
+    {
+      params: { api_key: API_KEY },
+    }
+  );
   return response.data.results;
 };
 
