@@ -25,9 +25,9 @@ export const fetchPopularMovies = async () => {
   return response.data.results;
 };
 
-export const fetchMovieDetails = async (movieId: number) => {
+export const fetchMovieDetails = async (movieId: number): Promise<Movie | null> => {
   try {
-    const response = await axios.get(`${BASE_URL}/movie/${movieId}`, {
+    const response = await axios.get <Movie>(`${BASE_URL}/movie/${movieId}`, {
       params: { api_key: API_KEY },
     });
     return response.data;

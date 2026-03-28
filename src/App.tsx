@@ -39,6 +39,7 @@ import RecipeSearch from "./Components/RecipeSearch"
 import RecipeDetails from "./Components/RecipeDetails";
 import PopularMovies from "./Components/PopularMovies";
 import SearchMovies from "./Components/SearchMovies";
+import MovieDetails from "./Components/MovieDetails";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/posts-search" element={<PostSearch />} />
         <Route path="/popular-movies" element={<PopularMovies />} />
         <Route path="/movies-search" element={<SearchMovies />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/recipe-search" element={<RecipeSearch />} />
         <Route path="/recipes/:id" element={<RecipeDetails/>} />
         <Route path="/products-search" element={<FilteredProductList />}></Route>

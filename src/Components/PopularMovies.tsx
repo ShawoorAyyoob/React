@@ -43,7 +43,7 @@ const PopularMovies: React.FC = () => {
                   <p className="card-text">
                     {movie.overview.substring(0, 80)}...
                   </p>
-                  <Link to={`/movies-search`} className="btn btn-primary">
+                  <Link to={`/movies/${movie.id}/`} className="btn btn-primary">
                     View Details
                   </Link>
                 </div>

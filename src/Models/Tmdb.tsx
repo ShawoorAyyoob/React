@@ -6,4 +6,13 @@ export default interface Movie {
   release_date: string;
   popularity: number;
   vote_average: number;
+  status: string;
+  budget: number;
+  revenue: number;
+  genres: Genre[];
+}
+
+interface Genre {
+  id: number;
+  name: string;
 }
